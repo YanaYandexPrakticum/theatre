@@ -1,5 +1,4 @@
-
-
+// Stores the details shared by actors and directors.
 public class Person {
     private String name;
     private String surname;
@@ -23,6 +22,9 @@ public class Person {
         return gender;
     }
 
-
-
+    // Returns the person's name and surname for readable output.
+    @Override
+    public String toString() {
+        return getName() + " " + getSurname();
+    }
 }

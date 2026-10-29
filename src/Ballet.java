@@ -1,6 +1,8 @@
+// Represents a ballet with its choreographer.
 public class Ballet extends MusicalShow {
-    private String choreographer;
+    private final String choreographer;
 
+    // Initializes the inherited show details and the choreographer.
     public Ballet(
             String title,
             int duration,

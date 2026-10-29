@@ -1,12 +1,15 @@
+// Represents a director and stores the number of shows they have directed.
 public class Director extends Person {
-    private int numberOfShow;
+    private final int numberOfShows;
 
-    public Director(String name, String surname, String gender, int numberOfShow) {
+    // Initializes the person's details and the number of shows.
+    public Director(String name, String surname, String gender, int numberOfShows) {
         super(name, surname, gender);
-        this.numberOfShow = numberOfShow;
+        this.numberOfShows = numberOfShows;
     }
 
-    public int getNumberOfShow() {
-        return numberOfShow;
+    // Returns the number of shows directed by this person.
+    public int getNumberOfShows() {
+        return numberOfShows;
     }
 }
