@@ -1,10 +1,16 @@
 // Stores the details shared by actors and directors.
+
+import java.util.Objects;
+
 public class Person {
+    public enum Gender {
+        MALE, FEMALE
+    };
     private String name;
     private String surname;
-    private String gender;
+    private Gender gender;
 
-    public Person(String name, String surname, String gender) {
+    public Person(String name, String surname, Gender gender) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -18,7 +24,7 @@ public class Person {
         return surname;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -26,5 +32,19 @@ public class Person {
     @Override
     public String toString() {
         return getName() + " " + getSurname();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name)
+                && Objects.equals(surname, person.surname)
+                && gender == person.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, gender);
     }
 }

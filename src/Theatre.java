@@ -2,13 +2,13 @@ public class Theatre {
     public static void main(String[] args) {
 
         // Create actors
-        Actor actor1 = new Actor("Tom", "Hanks", "male", 183);
-        Actor actor2 = new Actor("Meryl", "Streep", "female", 168);
-        Actor actor3 = new Actor("Keanu", "Reeves", "male", 186);
+        Actor actor1 = new Actor("Tom", "Hanks", Person.Gender.MALE, 183);
+        Actor actor2 = new Actor("Meryl", "Streep", Person.Gender.FEMALE, 168);
+        Actor actor3 = new Actor("Keanu", "Reeves", Person.Gender.MALE, 186);
 
         // Create directors
-        Director director1 = new Director("Peter", "Brook", "male", 20);
-        Director director2 = new Director("Ariane", "Mnouchkine", "female", 30);
+        Director director1 = new Director("Peter", "Brook", Person.Gender.MALE, 20);
+        Director director2 = new Director("Ariane", "Mnouchkine", Person.Gender.FEMALE, 30);
 
         // Set the music author and choreographer
         String musicAuthor = "Pyotr Ilyich Tchaikovsky";
@@ -53,11 +53,12 @@ public class Theatre {
         ballet.printActors();
 
         // Replace Tom Hanks with Meryl Streep in the opera
-        opera.replaceActor(actor2, "Hanks");
+        opera.replaceActor(actor2, actor1);
         opera.printActors();
 
         // Try to replace an actor who is not in the ballet
-        ballet.replaceActor(actor3, "Nobody");
+        Actor noName = new Actor("Danila", "Kozlov", Person.Gender.MALE, 185);
+        ballet.replaceActor(actor3, noName);
         ballet.printActors();
 
         // Print the librettos and directors

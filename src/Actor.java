@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Actor extends Person {
     private final int height;
 
-    public Actor(String name, String surname, String gender, int height) {
+    public Actor(String name, String surname, Gender gender, int height) {
         super(name, surname, gender);
         this.height = height;
     }
@@ -21,8 +21,7 @@ public class Actor extends Person {
         Actor actor = (Actor) object;
 
         return height == actor.height
-                && Objects.equals(getName(), actor.getName())
-                && Objects.equals(getSurname(), actor.getSurname());
+                 && super.equals(object);
 
     }
 
@@ -30,7 +29,7 @@ public class Actor extends Person {
     // Uses the same fields as equals().
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), height);
+        return Objects.hash(super.hashCode(), height);
     }
 
     // Adds the actor's height to the inherited name and surname.

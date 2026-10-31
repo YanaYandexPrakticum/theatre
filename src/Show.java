@@ -31,24 +31,21 @@ public class Show {
 
     // Prints the director using the Director's toString() method.
     public void printDirector() {
+
         System.out.println(director);
     }
 
     // Replaces the first actor whose surname matches actorSurname.
-    public void replaceActor(Actor newActor, String actorSurname) {
-        boolean actorFound = false;
+    public void replaceActor(Actor newActor, Actor oldActor) {
 
         for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).getSurname().equals(actorSurname)) {
+            if (listOfActors.get(i).equals(oldActor)) {
                 listOfActors.set(i, newActor);
-                actorFound = true;
-                break;
+                return;
             }
         }
+        System.out.println("Actor was not found.");
 
-        if (!actorFound) {
-            System.out.println("No actor with that surname was found.");
-        }
     }
 
     @Override

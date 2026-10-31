@@ -3,7 +3,7 @@ public class Director extends Person {
     private final int numberOfShows;
 
     // Initializes the person's details and the number of shows.
-    public Director(String name, String surname, String gender, int numberOfShows) {
+    public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);
         this.numberOfShows = numberOfShows;
     }
